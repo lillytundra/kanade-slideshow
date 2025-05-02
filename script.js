@@ -6,7 +6,7 @@ const images = [
     'images/kanade4.jpg',
     'images/kanade5.jpg',
     'images/kanade6.jpg',
-    'images/kanade7.jpg',
+    'images/kanade7.jpg'
 ];
 
 let current = 0;
