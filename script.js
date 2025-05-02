@@ -9,21 +9,24 @@ const images = [
     'images/kanade7.jpg',
 ];
 
+// preload all images
+images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
 let current = 0;
 const body = document.body;
 const music = document.getElementById('bg-music');
 
-// ✅ FIXED: Corrected syntax for setting background image
+// set initial background
 body.style.backgroundImage = `url('${images[current]}')`;
 
 // on click, change image and start music
 body.addEventListener('click', () => {
     current = (current + 1) % images.length;
-    
-    // ✅ FIXED: Proper background image syntax again
     body.style.backgroundImage = `url('${images[current]}')`;
 
-    // ✅ FIXED: Replaced wrong colon (:) with semicolon (;) in music.play()
     if (music.paused) {
         music.play();
     }
